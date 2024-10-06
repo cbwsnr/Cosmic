@@ -484,7 +484,7 @@ public final class CashOperationHandler extends AbstractPacketHandler {
     }
 
     private static boolean canBuy(Character chr, CashItem item, int cash) {
-        if (item != null && item.isOnSale() && item.getPrice() <= cash) {
+        if (item != null && item.getPrice() <= cash) {
             log.debug("Chr {} bought cash item {} (SN {}) for {}", chr, ItemInformationProvider.getInstance().getName(item.getItemId()), item.getSN(), item.getPrice());
             return true;
         } else {

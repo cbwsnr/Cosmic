@@ -238,7 +238,7 @@ public class CashShop {
         public static void loadAllCashItems() {
             DataProvider etc = DataProviderFactory.getDataProvider(WZFiles.ETC);
 
-            List<CashItem> notSaleItems = new ArrayList<>();
+            Map<Integer, CashItem> notSaleItems = new HashMap<>();
             Map<Integer, CashItem> loadedItems = new HashMap<>();
             for (Data item : etc.getData("Commodity.img").getChildren()) {
                 int sn = DataTool.getIntConvert("SN", item);
@@ -250,7 +250,7 @@ public class CashShop {
                 CashItem cashItem = new CashItem(sn, itemId, price, period, count, onSale);
                 loadedItems.put(sn, cashItem);
                 if (!onSale) {
-                    notSaleItems.add(cashItem);
+                    notSaleItems.put(cashItem.getItemId(), cashItem);
                 }
             }
             CashItemFactory.items = loadedItems;
@@ -278,10 +278,11 @@ public class CashShop {
                 ex.printStackTrace();
             }
             // 加入未上架物品
-            for (CashItem cItem : notSaleItems) {
+            for (Map.Entry<Integer, CashItem> entry : notSaleItems.entrySet()) {
                 byte info = 1;
-                loadedSpecialItems.add(new SpecialCashItem(cItem.getSN(), 1024, info));
+                loadedSpecialItems.add(new SpecialCashItem(entry.getValue().getSN(), 1024, info));
             }
+
             CashItemFactory.specialcashitems = loadedSpecialItems;
         }
 
