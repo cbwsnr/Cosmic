@@ -238,15 +238,20 @@ public class CashShop {
         public static void loadAllCashItems() {
             DataProvider etc = DataProviderFactory.getDataProvider(WZFiles.ETC);
 
+            List<CashItem> notSaleItems = new ArrayList<>();
             Map<Integer, CashItem> loadedItems = new HashMap<>();
             for (Data item : etc.getData("Commodity.img").getChildren()) {
                 int sn = DataTool.getIntConvert("SN", item);
                 int itemId = DataTool.getIntConvert("ItemId", item);
                 int price = DataTool.getIntConvert("Price", item, 0);
                 long period = DataTool.getIntConvert("Period", item, 1);
-                short count = (short) DataTool.getIntConvert("Count", item, 1);
+                short count = (short) DataTool.getIntConvert("Count", item, 99);
                 boolean onSale = DataTool.getIntConvert("OnSale", item, 0) == 1;
-                loadedItems.put(sn, new CashItem(sn, itemId, price, period, count, onSale));
+                CashItem cashItem = new CashItem(sn, itemId, price, period, count, onSale);
+                loadedItems.put(sn, cashItem);
+                if (!onSale) {
+                    notSaleItems.add(cashItem);
+                }
             }
             CashItemFactory.items = loadedItems;
 
@@ -271,6 +276,11 @@ public class CashShop {
                 }
             } catch (SQLException ex) {
                 ex.printStackTrace();
+            }
+            // 加入未上架物品
+            for (CashItem cItem : notSaleItems) {
+                byte info = 1;
+                loadedSpecialItems.add(new SpecialCashItem(cItem.getSN(), 1024, info));
             }
             CashItemFactory.specialcashitems = loadedSpecialItems;
         }
