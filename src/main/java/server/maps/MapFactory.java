@@ -117,10 +117,17 @@ public class MapFactory {
         AbstractLoadedLife myLife = loadLife(id, type, cy, f, fh, rx0, rx1, x, y, hide);
         if (myLife instanceof Monster monster) {
 
-            if (mobTime == -1) { //does not respawn, force spawn once
-                map.spawnMonster(monster);
-            } else {
-                map.addMonsterSpawn(monster, mobTime, team);
+            int mobRespawnRate = 3;
+            if (monster.isBoss()) {
+                mobRespawnRate = 1;
+            }
+
+            for (int i = 0; i < mobRespawnRate; i++) {
+                if (mobTime == -1) { //does not respawn, force spawn once
+                    map.spawnMonster(monster);
+                } else {
+                    map.addMonsterSpawn(monster, mobTime, team);
+                }
             }
 
             //should the map be reseted, use allMonsterSpawn list of monsters to spawn them again
