@@ -1,271 +1,271 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <imgdir name="Pet.img">
-  <imgdir name="5000000">
-    <string name="name" value="Brown Kitty"/>
-    <string name="desc" value="They are quiet and gentle in nature, so they don&apos;t go craving for food too often. They don&apos;t seem to be too obedient of their owners."/>
-    <string name="descD" value="It was a cute little kitty, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000001">
-    <string name="name" value="Brown Puppy"/>
-    <string name="desc" value="They are outgoing and active in nature, so they can&apos;t sit still for a period of time, which makes them hungry often. They are very obedient of their owners."/>
-    <string name="descD" value="It was a cute little puppy, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000002">
-    <string name="name" value="Pink Bunny"/>
-    <string name="desc" value="They are well-behaved and quiet, so they don&apos;t need to be fed more than the usual amount. They are smart and obedient, but also stubborn."/>
-    <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000003">
-    <string name="name" value="Mini Kargo"/>
-    <string name="desc" value="They are very very active, so they get hungry pretty often. Very intelligent, they are quite obedient of their owners."/>
-    <string name="descD" value="It was a cute little Mini Kargo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000004">
-    <string name="name" value="Black Kitty"/>
-    <string name="desc" value="They are quiet and gentle in nature, so they don&apos;t go craving for food too often. They don&apos;t seem to be too obedient of their owners."/>
-    <string name="descD" value="It was a cute little kitty, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000005">
-    <string name="name" value="White Bunny"/>
-    <string name="desc" value="They are well-behaved and quiet, so they don&apos;t need to be fed more than the usual amount. They are smart and obedient, but also stubborn."/>
-    <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000006">
-    <string name="name" value="Husky"/>
-    <string name="desc" value="Active, yet calm at times. Can be moderately fed. Very smart in general. "/>
-    <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000007">
-    <string name="name" value="Black Pig"/>
-    <string name="desc" value="Very active and hungry at all times. Need to be fed often. Very friendly in nature, so it&apos;s easy to increase the level of closeness with it."/>
-    <string name="descD" value="It was a cute little black pig, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000008">
-    <string name="name" value="Panda"/>
-    <string name="desc" value="Calm, relaxed, and gentle. A very rare creature."/>
-    <string name="descD" value="It was a cute little panda, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000009">
-    <string name="name" value="Dino Boy"/>
-    <string name="desc" value="A very adorable male baby dinosaur that is both active and unpredictable. "/>
-    <string name="descD" value="It was a cute little Dino Boy, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000010">
-    <string name="name" value="Dino Girl"/>
-    <string name="desc" value="A very adorable female baby dinosaur that is both active and unpredictable."/>
-    <string name="descD" value="It was a cute little Dino Girl, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000011">
-    <string name="name" value="Monkey"/>
-    <string name="desc" value="The always-curious monkey never rests, wanders around."/>
-    <string name="descD" value="It was a cute little monkey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000012">
-    <string name="name" value="White Tiger"/>
-    <string name="desc" value="They are very gentle and obedient in nature, easily becoming friendly with the owner, which in turn speeds up the level-up process."/>
-    <string name="descD" value="It was a cute little white tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000013">
-    <string name="name" value="Elephant"/>
-    <string name="desc" value="Very outgoing and mature; doesn&apos;t need to be fed all the time. An intelligent pet that easily understands the commands from the master. "/>
-    <string name="descD" value="It was a cute little Elephant, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000014">
-    <string name="name" value="Rudolph"/>
-    <string name="desc" value="Every Christmas, Santa Claus rides on the sleigh driven by his trusty sidekick, Rudolph."/>
-    <string name="descD" value="It was a cute little red-nosed Rudolph, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000015">
-    <string name="name" value="Dasher"/>
-    <string name="desc" value="They are smart and obedient by nature, picking up commands faster than other pets, but they also can get hungry in a hurry."/>
-    <string name="descD" value="It was a cute little Rudolph, but the &quot;Water of Life&quot; has completely dried up, turning it back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000017">
-    <string name="name" value="Robot"/>
-    <string name="desc" value="A hyper-active robot that always changes its mind on everything. Very unpredictable, yet easy to please."/>
-    <string name="descD" value="It was a cute little robot, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000018">
-    <string name="name" value="Husky"/>
-    <string name="desc" value="Active, yet calm at times. Can be moderately fed. Very smart in general. "/>
-    <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000020">
-    <string name="name" value="Mini Yeti"/>
-    <string name="desc" value="A trustworthy pet that quietly watches everyone&apos;s back. Quiet, but smart and gets a lot of things done."/>
-    <string name="descD" value="It was a cute little Mini Yeti, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000021">
-    <string name="name" value="Monkey"/>
-    <string name="desc" value="Very charming who is also very intuitive, but not as obedient as some of the others"/>
-    <string name="descD" value="It was a cute little Monkey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000022">
-    <string name="name" value="Turkey"/>
-    <string name="desc" value="Somewhat active, quiet and not well-behaved in nature. It is not very obedient, but isn&apos;t hungry very often."/>
-    <string name="descD" value="It was a cute little Turkey, but the &quot;Water of Life&quot; has completely dried up, turning it back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000023">
-    <string name="name" value="Penguin"/>
-    <string name="desc" value="Penguins are always energetic and in good spirits. Use the Meso Magnet and Item Pouch on the Penguin to pick up the mesos and items on the ground."/>
-    <string name="descD" value="It was a cute little Penguin, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000024">
-    <string name="name" value="Jr. Balrog"/>
-    <string name="desc" value="A trustworthy pet who is equally quick-witted. Unlike its masculine appearance, it is prone to insecurity and shyness."/>
-    <string name="descD" value="It was a cute little Jr. Balrog, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000025">
-    <string name="name" value="Golden Pig"/>
-    <string name="desc" value="This designed Golden Pig will definately bring you a Good Luck! Use the Meso Magnet and Item Pouch to pick up the mesos and items on the ground."/>
-    <string name="descD" value="It was a cute little Golden Pig, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000028">
-    <string name="name" value="Dragon"/>
-    <string name="desc" value="A special egg that becomes a mythical Baby Dragon upon hatching."/>
-  </imgdir>
-  <imgdir name="5000029">
-    <string name="name" value="Baby Dragon"/>
-    <string name="desc" value="A Baby Dragon hatched out of the special Dragon Egg. At Level 15, the pet can be evolved into a full-fledged Adult Dragon with the help of Garnox the NPC using the Rock of Evolution."/>
-    <string name="descD" value="It was a cute baby dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000030">
-    <string name="name" value="Green Dragon"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Dragon into a Green Dragon!"/>
-    <string name="descD" value="It was a cool Green Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000031">
-    <string name="name" value="Red Dragon"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Dragon into a Red Dragon!"/>
-    <string name="descD" value="It was a cool Red Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000032">
-    <string name="name" value="Blue Dragon"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Dragon into a Blue Dragon!"/>
-    <string name="descD" value="It was a cool Blue Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000033">
-    <string name="name" value="Black Dragon"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Dragon into the rare and majestic Black Dragon!"/>
-    <string name="descD" value="It was a magnificent Black Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000034">
-    <string name="name" value="Black Bunny"/>
-    <string name="desc" value="They are well-behaved and quiet, so they don&apos;t need to be fed more than the usual amount. They are smart and obedient, but also stubborn."/>
-    <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000036">
-    <string name="name" value="Jr. Reaper"/>
-    <string name="desc" value="Miniature death incarnate. Makes for a loyal but cheeky sidekick that is prone to talking back."/>
-    <string name="descD" value="It was a cute little Jr. Reaper, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000037">
-    <string name="name" value="Husky"/>
-    <string name="desc" value="Active, yet calm at times. Can be moderately fed. Very smart in general. "/>
-    <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000039">
-    <string name="name" value="Porcupine"/>
-    <string name="desc" value="A small, furry creature with very, very sharp spikes. A lovable pet."/>
-    <string name="descD" value="It was a cute little porcupine, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000041">
-    <string name="name" value="Snowman"/>
-    <string name="desc" value="An adorable Snowman that is also very active. May seem a little rude at times, but the more it is loved, the more affable it becomes."/>
-    <string name="descD" value="It was a cute little snowman, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000044">
-    <string name="name" value="Orange tiger"/>
-    <string name="desc" value="They are very gentle and obedient in nature, easily becoming friendly with the owner, which in turn speeds up the level-up process."/>
-    <string name="descD" value="It was a cute little white tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000045">
-    <string name="name" value="Skunk"/>
-    <string name="desc" value="Calm and quiet by nature, the easy-going, eccentric Skunk has a rather humorous and pompous outlook on life, the finer things are what it enjoys."/>
-    <string name="descD" value="It was a cute little skunk, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
-  </imgdir>
-  <imgdir name="5000026">
-    <string name="name" value="Sun Wu Kong"/>
-    <string name="desc" value="Sun Wu Kong ran out of Tang Shan Zhang. He is lazy and  moody but can be changed with love."/>
-    <string name="descD" value="Sun Wu Kong used to be cute but now he went back to doll as water of life dried out. Special magic can give him a life again."/>
-  </imgdir>
-  <imgdir name="5000042">
-    <string name="name" value="Kino"/>
-    <string name="desc" value="A happy-go-lucky, orange mushroom that loves shiny stones."/>
-    <string name="descD" value="A formerly adorable orange mushroom that turned into an inanimate doll due to severe dehydration from Life Water. Breathe new life into the doll using a special kind of magic!"/>
-  </imgdir>
-  <imgdir name="5000047">
-    <string name="name" value="Robo"/>
-    <string name="desc" value="A special egg that becomes a mythical Robo upon hatching."/>
-  </imgdir>
-  <imgdir name="5000048">
-    <string name="name" value="Baby Robo"/>
-    <string name="desc" value="A Baby Robo hatched out of the special Capsule. At Level 15, the pet can be evolved into a full-fledged Adult Robo with the help of Garnox the NPC using the Rock of Evolution."/>
-    <string name="descD" value="It was a cute baby robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000049">
-    <string name="name" value="Blue Robo"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Robo into a Blue Robo!"/>
-    <string name="descD" value="It was a cool Blue Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000050">
-    <string name="name" value="Red Robo"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Robo into a Red Robo!"/>
-    <string name="descD" value="It was a cool Red Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000051">
-    <string name="name" value="Green Robo"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Robo into a Green Robo!"/>
-    <string name="descD" value="It was a cool Green Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000052">
-    <string name="name" value="Gold Robo"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Robo into a Gold Robo!"/>
-    <string name="descD" value="It was a cool Gold Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000053">
-    <string name="name" value="Gorilla Robo"/>
-    <string name="desc" value="Mysterious magical powers aligned and sucessfully evolved the Baby Robo into the rare and majestic Gorilla Robo!"/>
-    <string name="descD" value="It was a magnificent Gorilla Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000055">
-    <string name="name" value="Crys.Rudolph"/>
-    <string name="desc" value="The star of this year&apos;s Holidays. Projects an aura of nobility and gentleness. Only available during the winter Holidays!"/>
-    <string name="descD" value="It was a magnificent Crystal Rudolph, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000058">
-    <string name="name" value="White Duck"/>
-    <string name="desc" value="Silly and foolish, but hard working and easy-going by nature, White Duck is easy to please, and enjoys good food and a swim."/>
-    <string name="descD" value="It was a magnificent White Duck, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
-  <imgdir name="5000054">
-    <string name="name" value="Snail"/>
-    <string name="desc" value="A snail that is really hard to figure out."/>
-    <string name="descD" value="It was a cute little Snail, but the magic has run out, and it turned back into a doll. Unfortunately, there&apos;s no way to revive this pet. Double-click on the doll to find out how to find a new pet."/>
-  </imgdir>
-  <imgdir name="5000060">
-    <string name="name" value="Pink Bean"/>
-    <string name="desc" value="A short and chubby pet summoned through the Goddess&apos; mirror. It is temperamental.\n#cA pet whose life will never expire.#"/>
-    <string name="descD" value="A pet whose life will never expire."/>
-  </imgdir>
-  <imgdir name="5000100">
-    <string name="name" value="Kino"/>
-    <string name="desc" value="A happy-go-lucky, orange mushroom that loves shiny stones.\n#cA pet whose life will never expire.#"/>
-    <string name="descD" value="A pet whose life will never expire."/>
-  </imgdir>
-  <imgdir name="5000101">
-    <string name="name" value="White Tiger"/>
-    <string name="desc" value="They are very gentle and obedient in nature, easily becoming friendly with the owner, which in turn speeds up the level-up process.\n#cA pet whose life will never expire.#"/>
-    <string name="descD" value="A pet whose life will never expire."/>
-  </imgdir>
-  <imgdir name="5000102">
-    <string name="name" value="Mini Yeti"/>
-    <string name="desc" value="A trustworthy pet that quietly watches everyone&apos;s back. Quiet, but smart and gets a lot of things done.\n#cA pet whose life will never expire.#"/>
-    <string name="descD" value="A pet whose life will never expire."/>
-  </imgdir>
-  <imgdir name="5000066">
-    <string name="name" value="Baby Tiger"/>
-    <string name="desc" value="Baby Tiger, the big star of 2010. "/>
-    <string name="descD" value="It was a magnificent Baby Tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
-  </imgdir>
+    <imgdir name="5000000">
+        <string name="name" value="褐色小猫"/>
+        <string name="descD" value="It was a cute little kitty, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格比较文静,不会经常觉得饿.\n但是它不爱听主人的话..."/>
+    </imgdir>
+    <imgdir name="5000001">
+        <string name="name" value="褐色小狗"/>
+        <string name="descD" value="It was a cute little puppy, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格开朗,好动,很容易饿.不过\n听从主人的命令..."/>
+    </imgdir>
+    <imgdir name="5000002">
+        <string name="name" value="粉红兔子"/>
+        <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格温柔,饭量小.头脑聪明,比\n较听话.但是固执起来谁也没有\n办法..."/>
+    </imgdir>
+    <imgdir name="5000003">
+        <string name="name" value="小怪猫"/>
+        <string name="descD" value="It was a cute little Mini Kargo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格活泼,好动,容易饿.但是很\n机灵..."/>
+    </imgdir>
+    <imgdir name="5000004">
+        <string name="name" value="黑色小猫"/>
+        <string name="descD" value="It was a cute little kitty, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格比较文静,不会经常觉得饿.\n但是它不爱听主人的话..."/>
+    </imgdir>
+    <imgdir name="5000005">
+        <string name="name" value="白色兔子"/>
+        <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格温柔,饭量小.头脑聪明,比\n较听话.但是固执起来谁也没有\n办法. "/>
+    </imgdir>
+    <imgdir name="5000006">
+        <string name="name" value="雪犬"/>
+        <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格开朗.但有时候比较文静.饭\n量不多.聪明,很听话. "/>
+    </imgdir>
+    <imgdir name="5000007">
+        <string name="name" value="黑小猪"/>
+        <string name="descD" value="It was a cute little black pig, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格很活泼,但很容易肚子饿,所\n以要经常给喂它.不太聪明,但很\n善良而可爱. "/>
+    </imgdir>
+    <imgdir name="5000008">
+        <string name="name" value="熊猫"/>
+        <string name="descD" value="It was a cute little panda, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格温顺,又有点懒懒的稀有宠\n物,而且经常会开玩笑,可是固执\n起来谁也没办法,由于经常出国,\n还会几句洋文! "/>
+    </imgdir>
+    <imgdir name="5000009">
+        <string name="name" value="恐龙王子"/>
+        <string name="descD" value="It was a cute little Dino Boy, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="活动力强,并有神秘气息的雄性\n小恐龙,据说它还有女朋友..."/>
+    </imgdir>
+    <imgdir name="5000010">
+        <string name="name" value="恐龙公主"/>
+        <string name="descD" value="It was a cute little Dino Girl, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="活动力强,并有神秘气息的雌性\n小恐龙,据说它还有男朋友..."/>
+    </imgdir>
+    <imgdir name="5000011">
+        <string name="name" value="猴子"/>
+        <string name="descD" value="It was a cute little monkey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="生性开朗,好奇心强,但有时我行\n我素..."/>
+    </imgdir>
+    <imgdir name="5000012">
+        <string name="name" value="小白虎"/>
+        <string name="descD" value="It was a cute little white tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格温顺的小白虎,即使是陌生\n人也会马上变得很亲密..."/>
+    </imgdir>
+    <imgdir name="5000013">
+        <string name="name" value="大象"/>
+        <string name="descD" value="It was a cute little Elephant, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="既单纯又乖巧的大象.因为心地\n善良所以很容易受伤, 对吃的特\n别积极..."/>
+    </imgdir>
+    <imgdir name="5000014">
+        <string name="name" value="圣诞鹿"/>
+        <string name="descD" value="It was a cute little red-nosed Rudolph, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格有点文静.但圣诞老人选择\n它以后性格变得很活泼了.是一\n个很善良而且可爱的小驯鹿..."/>
+    </imgdir>
+    <imgdir name="5000015">
+        <string name="name" value="圣诞鹿"/>
+        <string name="descD" value="It was a cute little Rudolph, but the &quot;Water of Life&quot; has completely dried up, turning it back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格有点文静.但圣诞老人选择\n它以后性格变得很活泼了.是一\n个很善良而且可爱的小驯鹿..."/>
+    </imgdir>
+    <imgdir name="5000017">
+        <string name="name" value="机器人"/>
+        <string name="descD" value="It was a cute little robot, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="天才博士制作的机器人. 虽然是\n机器但是拥有人类的情感..."/>
+    </imgdir>
+    <imgdir name="5000018">
+        <string name="name" value="雪犬"/>
+        <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格开朗.但有时候比较文静.饭\n量不多.聪明,很听话..."/>
+    </imgdir>
+    <imgdir name="5000020">
+        <string name="name" value="小白雪人"/>
+        <string name="descD" value="It was a cute little Mini Yeti, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="小白雪人会默默地陪在主人身边\n,是个值得信赖的好伙伴!它会默\n默地为主人完成很多事情喔!"/>
+    </imgdir>
+    <imgdir name="5000021">
+        <string name="name" value="猴子"/>
+        <string name="descD" value="It was a cute little Monkey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="生性开朗,好奇心很重,带有自己\n的聊天窗口与名牌..."/>
+    </imgdir>
+    <imgdir name="5000022">
+        <string name="name" value="火鸡"/>
+        <string name="descD" value="It was a cute little Turkey, but the &quot;Water of Life&quot; has completely dried up, turning it back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value=" 又淘气又活泼的总能让人快乐\n的小火鸡.搞笑的表情是它的特\n技..."/>
+    </imgdir>
+    <imgdir name="5000023">
+        <string name="name" value="小企企"/>
+        <string name="descD" value="It was a cute little Penguin, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value=" 胖嘟嘟的身体让它左倾右斜,但\n还是很卖力的勤劳的小企鹅.听\n从主人的吩咐,又时不时撒撒娇.\n.."/>
+    </imgdir>
+    <imgdir name="5000024">
+        <string name="name" value="蝙蝠怪"/>
+        <string name="descD" value="It was a cute little Jr. Balrog, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="可以信赖的活泼的蝙蝠怪,虽然\n长的一副BOSS样,但经常会害羞.\n "/>
+    </imgdir>
+    <imgdir name="5000025">
+        <string name="name" value="小金猪"/>
+        <string name="descD" value="It was a cute little Golden Pig, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="闪闪发出金色光芒的小金猪.拥\n有它说不定会有意外的好运. "/>
+    </imgdir>
+    <imgdir name="5000026">
+        <string name="name" value="齐天大圣"/>
+        <string name="descD" value="Sun Wu Kong used to be cute but now he went back to doll as water of life dried out. Special magic can give him a life again."/>
+        <string name="desc" value="飞天遁地、无所不能的齐天大圣\n!它绝对是你最得力的助手.若与\n孙悟空套装组一起搭配,将会出\n现特效..."/>
+    </imgdir>
+    <imgdir name="5000028">
+        <string name="name" value="进化龙"/>
+        <string name="desc" value="龙族所赋予的龙蛋,即将会孵化\n出宝贝龙..."/>
+    </imgdir>
+    <imgdir name="5000029">
+        <string name="name" value="宝贝龙"/>
+        <string name="descD" value="It was a cute baby dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="从龙蛋中孵化出来的宝贝龙.当\n等级达15级,便可利用进化之石,\n透过NPC迦尔努斯加以进化..."/>
+    </imgdir>
+    <imgdir name="5000030">
+        <string name="name" value="绿龙"/>
+        <string name="descD" value="It was a cool Green Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为绿龙!\n"/>
+    </imgdir>
+    <imgdir name="5000031">
+        <string name="name" value="红龙"/>
+        <string name="descD" value="It was a cool Red Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为红龙!\n"/>
+    </imgdir>
+    <imgdir name="5000032">
+        <string name="name" value="蓝龙"/>
+        <string name="descD" value="It was a cool Blue Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为蓝龙!\n"/>
+    </imgdir>
+    <imgdir name="5000033">
+        <string name="name" value="黑龙"/>
+        <string name="descD" value="It was a magnificent Black Dragon, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为黑龙!\n"/>
+    </imgdir>
+    <imgdir name="5000034">
+        <string name="name" value="黑兔"/>
+        <string name="descD" value="It was a cute little bunny, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="黑色兔子,有点没大没小的,喜欢\n被主人教训..."/>
+    </imgdir>
+    <imgdir name="5000036">
+        <string name="name" value="鬼灵精怪"/>
+        <string name="descD" value="It was a cute little Jr. Reaper, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="在万圣节诞生的可爱的鬼灵精怪\n.由于还处在婴儿时期,虽然是死\n神但没有任何威胁,它非常喜欢\n与人相处..."/>
+    </imgdir>
+    <imgdir name="5000037">
+        <string name="name" value="雪犬"/>
+        <string name="descD" value="It was a cute little Huskey, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格开朗.但有时候比较文静.饭\n量不多.聪明,很听话..."/>
+    </imgdir>
+    <imgdir name="5000039">
+        <string name="name" value="刺猬"/>
+        <string name="descD" value="It was a cute little porcupine, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="毛茸茸的刺猬,虽然有很多尖刺,\n但还是很可爱..."/>
+    </imgdir>
+    <imgdir name="5000041">
+        <string name="name" value="雪娃娃"/>
+        <string name="descD" value="It was a cute little snowman, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="可爱又活泼的小雪娃娃．虽然有\n时比较默但宠着它的话,它也会\n撒娇．"/>
+    </imgdir>
+    <imgdir name="5000042">
+        <string name="name" value="花蘑菇仔"/>
+        <string name="descD" value="A formerly adorable orange mushroom that turned into an inanimate doll due to severe dehydration from Life Water. Breathe new life into the doll using a special kind of magic!"/>
+        <string name="desc" value="特别喜欢闪烁的石头,性格开朗\n的花蘑菇仔.  "/>
+    </imgdir>
+    <imgdir name="5000044">
+        <string name="name" value="橙色老虎"/>
+        <string name="descD" value="It was a cute little white tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="性格温顺的橙色老虎,即使是陌\n生人也会马上变得很亲密..."/>
+    </imgdir>
+    <imgdir name="5000045">
+        <string name="name" value="臭鼬"/>
+        <string name="descD" value="It was a cute little skunk, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life..."/>
+        <string name="desc" value="可爱的放屁大王臭鼬..."/>
+    </imgdir>
+    <imgdir name="5000047">
+        <string name="name" value="罗伯"/>
+        <string name="desc" value="机器人所赋予的胶囊,即将会孵\n化出娃娃机器人..."/>
+    </imgdir>
+    <imgdir name="5000048">
+        <string name="name" value="娃娃机器人"/>
+        <string name="descD" value="It was a cute baby robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="从罗伯中孵化出来的娃娃机器人\n.当等级达15级,便可利用进化之\n石,透过NPC迦尔努斯加以进化..\n."/>
+    </imgdir>
+    <imgdir name="5000049">
+        <string name="name" value="机器人(蓝色)"/>
+        <string name="descD" value="It was a cool Blue Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为机器\n人(蓝色)!"/>
+    </imgdir>
+    <imgdir name="5000050">
+        <string name="name" value="机器人(红色)"/>
+        <string name="descD" value="It was a cool Red Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为机器\n人(红色)!"/>
+    </imgdir>
+    <imgdir name="5000051">
+        <string name="name" value="机器人(绿色)"/>
+        <string name="descD" value="It was a cool Green Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为机器\n人(绿色)!"/>
+    </imgdir>
+    <imgdir name="5000052">
+        <string name="name" value="机器人(金色)"/>
+        <string name="descD" value="It was a cool Gold Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为机器\n人(金色)!"/>
+    </imgdir>
+    <imgdir name="5000053">
+        <string name="name" value="大猩猩机器人"/>
+        <string name="descD" value="It was a magnificent Gorilla Robo, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="透过魔法之力,进化而成为大猩\n猩机器人!"/>
+    </imgdir>
+    <imgdir name="5000054">
+        <string name="name" value="符文蜗牛"/>
+        <string name="descD" value="It was a cute little Snail, but the magic has run out, and it turned back into a doll. Unfortunately, there's no way to revive this pet. Double-click on the doll to find out how to find a new pet."/>
+        <string name="desc" value="实在是不知道在想什么的蜗牛..\n."/>
+    </imgdir>
+    <imgdir name="5000055">
+        <string name="name" value="水晶银圣诞鹿"/>
+        <string name="descD" value="It was a magnificent Crystal Rudolph, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="今年圣诞的大明星,水晶银圣诞\n鹿,高贵温顺,只在每年的圣诞节\n才有机会拥有哦!"/>
+    </imgdir>
+    <imgdir name="5000058">
+        <string name="name" value="潜水玩具鸭"/>
+        <string name="descD" value="It was a magnificent White Duck, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="玩具鸭又傻又勤奋,天性随和,容\n易取悦,喜欢美食和游泳..."/>
+    </imgdir>
+    <imgdir name="5000060">
+        <string name="name" value="品克缤"/>
+        <string name="descD" value="A pet whose life will never expire."/>
+        <string name="desc" value="一只通过女神镜子召唤而来的宠\n物.矮矮胖胖却喜怒无常.#c拥有永\n恒的生命#"/>
+    </imgdir>
+    <imgdir name="5000066">
+        <string name="name" value="啊呜啊呜"/>
+        <string name="descD" value="It was a magnificent Baby Tiger, but with the &quot;Water of Life&quot; all dried up, it turned back into a doll. A little magic can bring it back to life, however..."/>
+        <string name="desc" value="幸运宠,全身上下散发着金色光\n芒的小老虎啊呜啊呜. "/>
+    </imgdir>
+    <imgdir name="5000100">
+        <string name="name" value="花蘑菇仔"/>
+        <string name="descD" value="A pet whose life will never expire."/>
+        <string name="desc" value="特别喜欢闪烁的石头,性格开朗\n的花蘑菇仔.#c拥有永恒的生命.#"/>
+    </imgdir>
+    <imgdir name="5000101">
+        <string name="name" value="小白虎"/>
+        <string name="descD" value="A pet whose life will never expire."/>
+        <string name="desc" value="性格温顺的小白虎,即使是陌生\n人也会马上变得很亲密.#c拥有永\n恒的生命.#"/>
+    </imgdir>
+    <imgdir name="5000102">
+        <string name="name" value="小白雪人"/>
+        <string name="descD" value="A pet whose life will never expire."/>
+        <string name="desc" value="受到威舍的魔法,而诞生的#c小白\n雪人#.#c拥有永恒的生命.#"/>
+    </imgdir>
 </imgdir>
