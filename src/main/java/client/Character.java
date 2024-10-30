@@ -78,6 +78,7 @@ import constants.skills.Shadower;
 import constants.skills.Sniper;
 import constants.skills.ThunderBreaker;
 import constants.skills.Warrior;
+import lombok.Getter;
 import net.packet.Packet;
 import net.server.PlayerBuffValueHolder;
 import net.server.PlayerCoolDownValueHolder;
@@ -262,7 +263,7 @@ public class Character extends AbstractCharacterObject {
     private Messenger messenger = null;
     private MiniGame miniGame;
     private RockPaperScissor rps;
-    private Mount maplemount;
+    private Mount mount;
     private Party party;
     private final Pet[] pets = new Pet[3];
     private PlayerShop playerShop = null;
@@ -356,6 +357,14 @@ public class Character extends AbstractCharacterObject {
     private boolean pendingNameChange; //only used to change name on logout, not to be relied upon elsewhere
     private long loginTime;
     private boolean chasing = false;
+
+    @Getter
+    private boolean familyBuff = false;
+    @Getter
+    private float familyExp = 1;
+    @Getter
+    private float familyDrop = 1;
+    private ScheduledFuture<?> FamilyBuffTimer = null;
 
     private Character() {
         super.setListener(new AbstractCharacterListener() {
@@ -471,7 +480,7 @@ public class Character extends AbstractCharacterObject {
         ret.level = 1;
         ret.accountid = c.getAccID();
         ret.buddylist = new BuddyList(20);
-        ret.maplemount = null;
+        ret.mount = null;
         ret.getInventory(InventoryType.EQUIP).setSlotLimit(24);
         ret.getInventory(InventoryType.USE).setSlotLimit(24);
         ret.getInventory(InventoryType.SETUP).setSlotLimit(24);
@@ -3205,12 +3214,12 @@ public class Character extends AbstractCharacterObject {
 
                 if (YamlConfig.config.server.USE_EXP_GAIN_LOG) {
                     ExpLogRecord expLogRecord = new ExpLogger.ExpLogRecord(
-                        getWorldServer().getExpRate(),
-                        expCoupon,
-                        totalExpGained,
-                        exp.get(),
-                        new Timestamp(lastExpGainTime),
-                        id
+                            getWorldServer().getExpRate(),
+                            expCoupon,
+                            totalExpGained,
+                            exp.get(),
+                            new Timestamp(lastExpGainTime),
+                            id
                     );
                     ExpLogger.putExpLogRecord(expLogRecord);
                 }
@@ -5469,7 +5478,7 @@ public class Character extends AbstractCharacterObject {
     }
 
     public Mount getMount() {
-        return maplemount;
+        return mount;
     }
 
     public Messenger getMessenger() {
@@ -6542,6 +6551,7 @@ public class Character extends AbstractCharacterObject {
             return false;
         }
     }
+
     public void setPlayerRates() {
         this.expRate *= GameConstants.getPlayerBonusExpRate(this.level / 20);
         this.mesoRate *= GameConstants.getPlayerBonusMesoRate(this.level / 20);
@@ -7335,18 +7345,18 @@ public class Character extends AbstractCharacterObject {
                         }
                     }
                 }
-                
+
                 ret.buddylist.loadFromDb(charid);
                 ret.storage = wserv.getAccountStorage(ret.accountid);
 
                 /* Double-check storage incase player is first time on server
                  * The storage won't exist so nothing to load
                  */
-                if(ret.storage == null) {
+                if (ret.storage == null) {
                     wserv.loadAccountStorage(ret.accountid);
                     ret.storage = wserv.getAccountStorage(ret.accountid);
                 }
-                
+
                 int startHp = ret.hp, startMp = ret.mp;
                 ret.reapplyLocalStats();
                 ret.changeHpMp(startHp, startMp, true);
@@ -7355,14 +7365,14 @@ public class Character extends AbstractCharacterObject {
 
             final int mountid = ret.getJobType() * 10000000 + 1004;
             if (ret.getInventory(InventoryType.EQUIPPED).getItem((short) -18) != null) {
-                ret.maplemount = new Mount(ret, ret.getInventory(InventoryType.EQUIPPED).getItem((short) -18).getItemId(), mountid);
+                ret.mount = new Mount(ret, ret.getInventory(InventoryType.EQUIPPED).getItem((short) -18).getItemId(), mountid);
             } else {
-                ret.maplemount = new Mount(ret, 0, mountid);
+                ret.mount = new Mount(ret, 0, mountid);
             }
-            ret.maplemount.setExp(mountexp);
-            ret.maplemount.setLevel(mountlevel);
-            ret.maplemount.setTiredness(mounttiredness);
-            ret.maplemount.setActive(false);
+            ret.mount.setExp(mountexp);
+            ret.mount.setLevel(mountlevel);
+            ret.mount.setTiredness(mounttiredness);
+            ret.mount.setActive(false);
 
             // Quickslot key config
             try (final PreparedStatement pSelectQuickslotKeyMapped = con.prepareStatement("SELECT keymap FROM quickslotkeymapped WHERE accountid = ?;")) {
@@ -7472,7 +7482,6 @@ public class Character extends AbstractCharacterObject {
     }
 
     public Mount mount(int id, int skillid) {
-        Mount mount = maplemount;
         mount.setItemId(id);
         mount.setSkillId(skillid);
         return mount;
@@ -8239,7 +8248,7 @@ public class Character extends AbstractCharacterObject {
                         ps.executeBatch();
                     }
                 }
-                
+
                 con.commit();
                 return true;
             } catch (Exception e) {
@@ -8278,7 +8287,6 @@ public class Character extends AbstractCharacterObject {
             return;
         }
 
-        Calendar c = Calendar.getInstance();
         log.debug("Attempting to {} chr {}", notAutosave ? "save" : "autosave", name);
 
         Server.getInstance().updateCharacterEntry(this);
@@ -8367,10 +8375,10 @@ public class Character extends AbstractCharacterObject {
                         ps.setInt(27, 0);
                         ps.setInt(28, 4);
                     }
-                    if (maplemount != null) {
-                        ps.setInt(29, maplemount.getLevel());
-                        ps.setInt(30, maplemount.getExp());
-                        ps.setInt(31, maplemount.getTiredness());
+                    if (mount != null) {
+                        ps.setInt(29, mount.getLevel());
+                        ps.setInt(30, mount.getExp());
+                        ps.setInt(31, mount.getTiredness());
                     } else {
                         ps.setInt(29, 1);
                         ps.setInt(30, 0);
@@ -9616,12 +9624,12 @@ public class Character extends AbstractCharacterObject {
     }
 
     public boolean runTirednessSchedule() {
-        if (maplemount != null) {
-            int tiredness = maplemount.incrementAndGetTiredness();
+        if (mount != null) {
+            int tiredness = mount.incrementAndGetTiredness();
 
-            this.getMap().broadcastMessage(PacketCreator.updateMount(this.getId(), maplemount, false));
+            this.getMap().broadcastMessage(PacketCreator.updateMount(this.getId(), mount, false));
             if (tiredness > 99) {
-                maplemount.setTiredness(99);
+                mount.setTiredness(99);
                 this.dispelSkill(this.getJobType() * 10000000 + 1004);
                 this.dropMessage(6, "Your mount grew tired! Treat it some revitalizer before riding it again!");
                 return false;
@@ -9972,7 +9980,8 @@ public class Character extends AbstractCharacterObject {
     }
 
     @Override
-    public void setObjectId(int id) {}
+    public void setObjectId(int id) {
+    }
 
     @Override
     public String toString() {
@@ -10403,9 +10412,9 @@ public class Character extends AbstractCharacterObject {
             evtLock.unlock();
         }
 
-        if (maplemount != null) {
-            maplemount.empty();
-            maplemount = null;
+        if (mount != null) {
+            mount.empty();
+            mount = null;
         }
         if (remove) {
             partyQuest = null;
@@ -11175,5 +11184,31 @@ public class Character extends AbstractCharacterObject {
 
     public void setChasing(boolean chasing) {
         this.chasing = chasing;
+    }
+
+    public void setFamilyBuff(boolean type, float exp, float drop) {
+        this.familyBuff = type;
+        this.familyExp = exp;
+        this.familyDrop = drop;
+    }
+
+    public void startFamilyBuffTimer(int delay) {
+        if (FamilyBuffTimer != null && !FamilyBuffTimer.isCancelled()) {
+            FamilyBuffTimer.cancel(false);
+        }
+        FamilyBuffTimer = TimerManager.getInstance().schedule(() -> {
+            try {
+                sendPacket(PacketCreator.cancelFamilyBuff());
+            } finally {
+                cancelFamilyBuffTimer();
+            }
+        }, delay);
+    }
+
+    public void cancelFamilyBuffTimer() {
+        if (FamilyBuffTimer != null && !FamilyBuffTimer.isCancelled()) {
+            FamilyBuffTimer.cancel(false);
+            setFamilyBuff(false, 1, 1);
+        }
     }
 }

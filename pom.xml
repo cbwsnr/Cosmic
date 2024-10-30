@@ -69,6 +69,7 @@
         <jdbi-version>3.45.1</jdbi-version> <!-- Convenience wrapper around JDBC -->
         <junit.version>5.10.2</junit.version> <!-- Unit test -->
         <mockito.version>5.11.0</mockito.version> <!-- Unit test -->
+        <lombok.version>1.18.30</lombok.version>
     </properties>
 
     <dependencies>
@@ -81,6 +82,14 @@
             <groupId>net.jcip</groupId>
             <artifactId>jcip-annotations</artifactId>
             <version>${jcip-annotations.version}</version>
+        </dependency>
+
+        <!-- lombok -->
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>${lombok.version}</version>
+            <scope>provided</scope>
         </dependency>
 
         <!-- Database -->

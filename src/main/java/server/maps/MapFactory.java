@@ -117,7 +117,7 @@ public class MapFactory {
         AbstractLoadedLife myLife = loadLife(id, type, cy, f, fh, rx0, rx1, x, y, hide);
         if (myLife instanceof Monster monster) {
 
-            int mobRespawnRate = 3;
+            int mobRespawnRate = 2;
             if (monster.isBoss()) {
                 mobRespawnRate = 1;
             }

@@ -31,6 +31,7 @@ import server.quest.Quest;
 
 import javax.script.Invocable;
 import javax.script.ScriptEngine;
+import javax.script.ScriptException;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -208,5 +209,28 @@ public class QuestScriptManager extends AbstractScriptManager {
     public void reloadQuestScripts() {
         scripts.clear();
         qms.clear();
+    }
+
+    public boolean checkFunctionExists(Client c, short questid, int npc, String functionName) {
+        ScriptEngine engine = getQuestScriptEngine(c, questid);
+        if (engine == null) {
+            return false;
+        }
+        try {
+            QuestActionManager qm = new QuestActionManager(c, questid, npc, false);
+            engine.put("qm", qm);
+            String script = "function checkFunction(funcName) { return typeof this[funcName] === 'function'; }";
+            engine.eval(script);
+
+            Invocable invocable = (Invocable) engine;
+            boolean exists = (Boolean) invocable.invokeFunction("checkFunction", functionName);
+
+            qm.dispose();
+            return exists;
+        } catch (ScriptException | NoSuchMethodException e) {
+            e.printStackTrace();
+            dispose(c);
+        }
+        return false;
     }
 }

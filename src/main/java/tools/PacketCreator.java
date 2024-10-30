@@ -1142,8 +1142,7 @@ public class PacketCreator {
      * Gets a packet to spawn a special map object.
      *
      * @param summon
-     * @param skillLevel The level of the skill used.
-     * @param animated   Animated spawn?
+     * @param animated Animated spawn?
      * @return The spawn packet for the map object.
      */
     public static Packet spawnSummon(Summon summon, boolean animated) {
@@ -1152,7 +1151,7 @@ public class PacketCreator {
         p.writeInt(summon.getObjectId());
         p.writeInt(summon.getSkill());
         p.writeByte(0x0A); //v83
-        p.writeByte(summon.getSkillLevel());
+        p.writeByte(summon.getSkillLevel()); // The level of the skill used.
         p.writePos(summon.getPosition());
         p.writeByte(summon.getStance());    //bMoveAction & foothold, found thanks to Rien dev team
         p.writeShort(0);
@@ -1235,6 +1234,10 @@ public class PacketCreator {
         return serverMessage(type, (byte) 0, message, false, false, 0);
     }
 
+    public static Packet serverNotice(int type, String message, int npc) {
+        return serverMessage(type, 0, message, false, false, npc);
+    }
+
     /**
      * Gets a server notice packet.
      * <p>
@@ -1247,10 +1250,6 @@ public class PacketCreator {
      * @param message The message to convey.
      * @return The server notice packet.
      */
-    public static Packet serverNotice(int type, String message, int npc) {
-        return serverMessage(type, 0, message, false, false, npc);
-    }
-
     public static Packet serverNotice(int type, int channel, String message) {
         return serverMessage(type, channel, message, false, false, 0);
     }
@@ -1655,7 +1654,6 @@ public class PacketCreator {
      *
      * @param cidfrom The character ID who sent the chat.
      * @param text    The text of the chat.
-     * @param whiteBG
      * @param show
      * @return The general chat packet.
      */
@@ -2738,7 +2736,6 @@ public class PacketCreator {
 
     /**
      * @param chr
-     * @param isSelf
      * @return
      */
     public static Packet charInfo(Character chr) {
@@ -2858,7 +2855,6 @@ public class PacketCreator {
 
     /**
      * @param cid
-     * @param statups
      * @param mount
      * @return
      */
@@ -2875,20 +2871,8 @@ public class PacketCreator {
         p.writeByte(0); //Times you have been buffed
         return p;
     }
-        /*        p.writeInt(cid);
-             writeLongMask(mplew, statups);
-             for (Pair<BuffStat, Integer> statup : statups) {
-             if (morph) {
-             p.writeInt(statup.getRight().intValue());
-             } else {
-             p.writeShort(statup.getRight().shortValue());
-             }
-             }
-             p.writeShort(0);
-             p.writeByte(0);*/
 
     /**
-     * @param c
      * @param quest
      * @return
      */
@@ -2901,7 +2885,6 @@ public class PacketCreator {
     }
 
     /**
-     * @param c
      * @param quest
      * @return
      */
@@ -2915,10 +2898,8 @@ public class PacketCreator {
     }
 
     /**
-     * @param c
      * @param quest
      * @param npc
-     * @param progress
      * @return
      */
 
@@ -3259,7 +3240,6 @@ public class PacketCreator {
     }
 
     /**
-     * @param c
      * @param shop
      * @param owner
      * @return
@@ -7456,6 +7436,36 @@ public class PacketCreator {
         //8 or 16 = "You have reached the round of %n by default." | Encodes nState as %n ?!
         p.writeByte(nState);
 
+        return p;
+    }
+
+    public static Packet familyBuff(int type, int buffnr, int amount, int time) {
+        OutPacket p = OutPacket.create(SendOpcode.FAMILY_SET_PRIVILEGE);
+        p.writeByte(type);
+        if (type >= 2 && type <= 4) {
+            p.writeInt(buffnr);
+            p.writeInt(type == 3 ? 0 : amount);
+            p.writeInt(type == 2 ? 0 : amount);
+            p.writeByte(0);
+            p.writeInt(time);
+        }
+        return p;
+    }
+
+    public static Packet cancelFamilyBuff() {
+        return familyBuff(0, 0, 0, 0);
+    }
+
+    public static Packet UseTreasureBox(int type) {
+        OutPacket p = OutPacket.create(SendOpcode.SUCCESS_IN_USE_GACHAPON_BOX);
+        p.writeInt(type);
+        return p;
+    }
+
+    public static Packet updateHpMpAlert(byte hp, byte mp) {
+        OutPacket p = OutPacket.create(SendOpcode.UPDATE_HPMPAALERT);
+        p.writeByte(hp);
+        p.writeByte(mp);
         return p;
     }
 

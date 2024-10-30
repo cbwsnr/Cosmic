@@ -23,6 +23,7 @@ package net.server.channel.handlers;
 
 import client.Character;
 import client.Client;
+import client.Family;
 import client.FamilyEntitlement;
 import client.FamilyEntry;
 import config.YamlConfig;
@@ -31,9 +32,12 @@ import net.AbstractPacketHandler;
 import net.packet.InPacket;
 import net.server.coordinator.world.InviteCoordinator;
 import net.server.coordinator.world.InviteCoordinator.InviteType;
+import net.server.world.PartyCharacter;
 import server.maps.FieldLimit;
 import server.maps.MapleMap;
 import tools.PacketCreator;
+
+import java.util.Objects;
 
 /**
  * @author Moogra
@@ -68,7 +72,6 @@ public final class FamilyUseHandler extends AbstractPacketHandler {
                                 useEntitlement(entry, type);
                             } else {
                                 c.sendPacket(PacketCreator.sendFamilyMessage(75, 0)); // wrong message, but close enough. (client should check this first anyway)
-                                return;
                             }
                         } else {
                             if (!FieldLimit.CANNOTMIGRATE.check(targetMap.getFieldLimit()) && !FieldLimit.CANNOTVIPROCK.check(ownMap.getFieldLimit())
@@ -83,7 +86,6 @@ public final class FamilyUseHandler extends AbstractPacketHandler {
                                 useEntitlement(entry, type);
                             } else {
                                 c.sendPacket(PacketCreator.sendFamilyMessage(75, 0));
-                                return;
                             }
                         }
                     }
@@ -91,45 +93,59 @@ public final class FamilyUseHandler extends AbstractPacketHandler {
                     c.sendPacket(PacketCreator.sendFamilyMessage(67, 0));
                 }
             }
-        } else if (type == FamilyEntitlement.FAMILY_BONDING) {
-            //not implemented
+
         } else {
-            boolean party = false;
-            boolean isExp = false;
-            float rate = 1.5f;
-            int duration = 15;
-            do {
-                switch (type) {
-                    case PARTY_EXP_2_30MIN:
-                        party = true;
-                        isExp = true;
-                        type = FamilyEntitlement.SELF_EXP_2_30MIN;
-                        continue;
-                    case PARTY_DROP_2_30MIN:
-                        party = true;
-                        type = FamilyEntitlement.SELF_DROP_2_30MIN;
-                        continue;
-                    case SELF_DROP_2_30MIN:
-                        duration = 30;
-                    case SELF_DROP_2:
-                        rate = 2.0f;
-                    case SELF_DROP_1_5:
-                        break;
-                    case SELF_EXP_2_30MIN:
-                        duration = 30;
-                    case SELF_EXP_2:
-                        rate = 2.0f;
-                    case SELF_EXP_1_5:
-                        isExp = true;
-                    default:
-                        break;
-                }
-                break;
-            } while (true);
-            //not implemented
+            if (c.getPlayer().isFamilyBuff()) {
+                c.getPlayer().message("你已经有BUFF");
+                return;
+            }
+
+            switch (type) {
+                case PARTY_EXP_2_30MIN:
+                    applyPartyBuff(c, 2, 10, 30, FamilyEntitlement.PARTY_EXP_2_30MIN);
+                    break;
+                case PARTY_DROP_2_30MIN:
+                    applyPartyBuff(c, 3, 9, 30, FamilyEntitlement.PARTY_DROP_2_30MIN);
+                    break;
+                case SELF_DROP_2_30MIN:
+                    applySelfBuff(c, 3, 7, 30, 2, FamilyEntitlement.SELF_DROP_2_30MIN);
+                    break;
+                case SELF_DROP_2:
+                    applySelfBuff(c, 3, 5, 15, 2, FamilyEntitlement.SELF_DROP_2);
+                    break;
+                case SELF_DROP_1_5:
+                    applySelfBuff(c, 3, 2, 15, 1.5f, FamilyEntitlement.SELF_DROP_1_5);
+                    break;
+                case SELF_EXP_2_30MIN:
+                    applySelfBuff(c, 2, 8, 30, 2, FamilyEntitlement.SELF_EXP_2_30MIN);
+                    break;
+                case SELF_EXP_2:
+                    applySelfBuff(c, 2, 6, 15, 2, FamilyEntitlement.SELF_EXP_2);
+                    break;
+                case SELF_EXP_1_5:
+                    applySelfBuff(c, 2, 3, 15, 1.5f, FamilyEntitlement.SELF_EXP_1_5);
+                    break;
+                case FAMILY_BONDING:
+                    if (useEntitlement(entry, FamilyEntitlement.FAMILY_BONDING)) {
+                        Family family = c.getPlayer().getFamily();
+                        family.Familybuff(30);
+                    }
+                    break;
+                default:
+                    // Handle unknown entitlement type
+                    break;
+            }
         }
     }
 
+    /**
+     * 警告：此处只针对buff相关的做了处理，一日只一次
+     * 非buff相关的如传送到别人位置或将别人传送到自己位置都没有限制一日一次，因为从2019年开始这俩就没限
+     *
+     * @param entry       学院实体类
+     * @param entitlement 功能类型
+     * @return 是否使用成功
+     */
     private boolean useEntitlement(FamilyEntry entry, FamilyEntitlement entitlement) {
         if (entry.useEntitlement(entitlement)) {
             entry.gainReputation(-entitlement.getRepCost(), false);
@@ -138,4 +154,49 @@ public final class FamilyUseHandler extends AbstractPacketHandler {
         }
         return false;
     }
+
+    private void applyPartyBuff(Client c, int type, int effect, int duration, FamilyEntitlement entitlement) {
+        Character player = c.getPlayer();
+        FamilyEntry familyEntry = player.getFamilyEntry();
+        if (player.getParty() != null) {
+            // 只扣减使用者次数
+            if (!useEntitlement(familyEntry, entitlement)) {
+                return;
+            }
+            for (PartyCharacter mpc : player.getParty().getMembers()) {
+                FamilyEntry mpcEntry = mpc.getPlayer().getFamilyEntry();
+                // 没有学院的不享受
+                if (mpcEntry == null) {
+                    continue;
+                }
+                // 不是同学的不享受
+                if (!Objects.equals(mpcEntry.getFamily().getID(), familyEntry.getFamily().getID())) {
+                    continue;
+                }
+                mpc.getPlayer().sendPacket(PacketCreator.familyBuff(type, effect, 1, duration * 60000));
+                if (type == 2) {
+                    mpc.getPlayer().setFamilyBuff(true, 2, 1);
+                } else {
+                    mpc.getPlayer().setFamilyBuff(true, 1, 2);
+                }
+                mpc.getPlayer().startFamilyBuffTimer(duration * 60000);
+                // 不扣减其他人次数
+//                useEntitlement(mpcEntry, entitlement);
+            }
+        }
+    }
+
+    private void applySelfBuff(Client c, int type, int effect, int duration, float rate, FamilyEntitlement entitlement) {
+        if (!useEntitlement(c.getPlayer().getFamilyEntry(), entitlement)) {
+            return;
+        }
+        c.sendPacket(PacketCreator.familyBuff(type, effect, 1, duration * 60000));
+        if (type == 2) {
+            c.getPlayer().setFamilyBuff(true, rate, 1);
+        } else {
+            c.getPlayer().setFamilyBuff(true, 1, rate);
+        }
+        c.getPlayer().startFamilyBuffTimer(duration * 60000);
+    }
 }
+
