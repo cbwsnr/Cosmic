@@ -830,7 +830,7 @@ public class Character extends AbstractCharacterObject {
                     weapMulti = 4.2;
                 }
 
-                int attack = (int) Math.min(Math.floor((2 * getLevel() + 31) / 3), 31);
+                int attack = (int) Math.min(Math.floor((2D * getLevel() + 31) / 3), 31);
                 maxbasedamage = (int) Math.ceil((localstr * weapMulti + localdex) * attack / 100.0);
             } else {
                 maxbasedamage = 1;
@@ -1078,10 +1078,7 @@ public class Character extends AbstractCharacterObject {
     }
 
     public void setMasteries(int jobId) {
-        int[] skills = new int[4];
-        for (int i = 0; i > skills.length; i++) {
-            skills[i] = 0; //that initialization meng
-        }
+        int[] skills = new int[]{0, 0, 0, 0};
         if (jobId == 112) {
             skills[0] = Hero.ACHILLES;
             skills[1] = Hero.MONSTER_MAGNET;
