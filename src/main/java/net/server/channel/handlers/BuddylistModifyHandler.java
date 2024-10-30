@@ -39,8 +39,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-import static client.BuddyList.BuddyOperation.ADDED;
-
 public class BuddylistModifyHandler extends AbstractPacketHandler {
     private static class CharacterIdNameBuddyCapacity extends CharacterNameAndId {
         private final int buddyCapacity;
@@ -87,7 +85,8 @@ public class BuddylistModifyHandler extends AbstractPacketHandler {
         if (mode == 1) { // add
             String addName = p.readString();
             String group = p.readString();
-            if (group.length() > 16 || addName.length() < 4 || addName.length() > 13) {
+            if (group.length() > 16 || addName.length() < 2 || addName.length() > 13) {
+                System.out.println("buddy name or group length error");
                 return; //hax.
             }
             BuddylistEntry ble = buddylist.get(addName);
@@ -146,7 +145,7 @@ public class BuddylistModifyHandler extends AbstractPacketHandler {
                             int otherCid = charWithId.getId();
                             if (buddyAddResult == BuddyAddResult.ALREADY_ON_LIST && channel != -1) {
                                 displayChannel = channel;
-                                notifyRemoteChannel(c, channel, otherCid, ADDED);
+                                notifyRemoteChannel(c, channel, otherCid, BuddyOperation.ADDED);
                             } else if (buddyAddResult != BuddyAddResult.ALREADY_ON_LIST && channel == -1) {
                                 try (Connection con = DatabaseConnection.getConnection();
                                      PreparedStatement ps = con.prepareStatement("INSERT INTO buddies (characterid, `buddyid`, `pending`) VALUES (?, ?, 1)")) {
@@ -192,7 +191,7 @@ public class BuddylistModifyHandler extends AbstractPacketHandler {
                     if (otherName != null) {
                         buddylist.put(new BuddylistEntry(otherName, "Default Group", otherCid, channel, true));
                         c.sendPacket(PacketCreator.updateBuddylist(buddylist.getBuddies()));
-                        notifyRemoteChannel(c, channel, otherCid, ADDED);
+                        notifyRemoteChannel(c, channel, otherCid, BuddyOperation.ADDED);
                     }
                 } catch (SQLException e) {
                     e.printStackTrace();
