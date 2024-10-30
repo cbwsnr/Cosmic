@@ -739,6 +739,15 @@ public class Monster extends AbstractLoadedLife {
                 personalExp += expBonus;
             }
 
+            Integer expBuff = attacker.getBuffedValue(BuffStat.EXP_BUFF);
+            if (expBuff != null) {
+                personalExp *= 2;
+            }
+
+            if (attacker.isFamilyBuff()) {
+                personalExp *= attacker.getFamilyExp();
+            }
+
             int _personalExp = expValueToInteger(personalExp); // assuming no negative xp here
 
             if (partyExp != null) {
