@@ -3394,12 +3394,38 @@ public class PacketCreator {
         return p;
     }
 
+    public static Packet getNPCTalkNum(int npc, String talk, int def, int min, int max,byte speaker) {
+        final OutPacket p = OutPacket.create(SendOpcode.NPC_TALK);
+        p.writeByte(4); // ?
+        p.writeInt(npc);
+        p.writeByte(3);
+        p.writeByte(speaker); //speaker
+        p.writeString(talk);
+        p.writeInt(def);
+        p.writeInt(min);
+        p.writeInt(max);
+        p.writeInt(0);
+        return p;
+    }
+
     public static Packet getNPCTalkText(int npc, String talk, String def) {
         final OutPacket p = OutPacket.create(SendOpcode.NPC_TALK);
         p.writeByte(4); // Doesn't matter
         p.writeInt(npc);
         p.writeByte(2);
         p.writeByte(0); //speaker
+        p.writeString(talk);
+        p.writeString(def);//:D
+        p.writeInt(0);
+        return p;
+    }
+
+    public static Packet getNPCTalkText(int npc, String talk, String def,byte speaker) {
+        final OutPacket p = OutPacket.create(SendOpcode.NPC_TALK);
+        p.writeByte(4); // Doesn't matter
+        p.writeInt(npc);
+        p.writeByte(2);
+        p.writeByte(speaker); //speaker
         p.writeString(talk);
         p.writeString(def);//:D
         p.writeInt(0);
