@@ -17,7 +17,6 @@ import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
 import java.nio.charset.Charset;
-import java.nio.charset.StandardCharsets;
 
 public class CharsetConstants {
 
@@ -26,7 +25,7 @@ public class CharsetConstants {
     public static final Charset CHARSET = loadCharset();
 
     private static Charset loadCharset() {
-        return StandardCharsets.UTF_8;
+        return Charset.forName("GBK");
     }
 
 }
