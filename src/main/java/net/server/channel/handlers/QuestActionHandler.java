@@ -85,7 +85,6 @@ public final class QuestActionHandler extends AbstractPacketHandler {
                     return;
                 }
                 if (quest.canStart(player, npc)) {
-                    // 修复客户端任务对话两次的问题
                     boolean success = QuestScriptManager.getInstance().checkFunctionExists(c, questid, npc, "start");
                     boolean hasScriptRequirement = quest.hasScriptRequirement(false);
                     if (hasScriptRequirement && success) {
