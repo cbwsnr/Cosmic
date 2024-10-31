@@ -67,6 +67,7 @@ public class MonsterCarnival {
                     team1 = mc;
                 }
             }
+
             for (PartyCharacter mpc : p2.getMembers()) {
                 Character mc = mpc.getPlayer();
                 if (mc != null) {
@@ -98,7 +99,6 @@ public class MonsterCarnival {
             }
 
             // thanks Atoot, Vcoc for noting double CPQ functional being sent to players in CPQ start
-
             timer = TimerManager.getInstance().schedule(() -> timeUp(), SECONDS.toMillis(map.getTimeDefault())); // thanks Atoot for noticing an irregular "event extended" issue here
             effectTimer = TimerManager.getInstance().schedule(() -> complete(), SECONDS.toMillis(map.getTimeDefault() - 10));
             respawnTask = TimerManager.getInstance().register(() -> respawn(), YamlConfig.config.server.RESPAWN_INTERVAL);
