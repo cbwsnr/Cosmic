@@ -135,7 +135,7 @@ public class StatEffect {
     private short mpCon, hpCon;
     private int duration, target, barrier, mob;
     private boolean overTime, repeatEffect;
-    private int sourceid;
+    private int sourceid,expbuff;
     private int moveTo;
     private int cp, nuffSkill;
     private List<Disease> cureDebuffs;
@@ -309,7 +309,7 @@ public class StatEffect {
         ret.mdef = (short) DataTool.getInt("mdd", source, 0);
         ret.acc = (short) DataTool.getIntConvert("acc", source, 0);
         ret.avoid = (short) DataTool.getInt("eva", source, 0);
-
+        ret.expbuff = DataTool.getInt("expBuff", source, 0);
         ret.speed = (short) DataTool.getInt("speed", source, 0);
         ret.jump = (short) DataTool.getInt("jump", source, 0);
 
@@ -459,6 +459,7 @@ public class StatEffect {
             addBuffStatPairToListIfNotZero(statups, BuffStat.AVOID, (int) ret.avoid);
             addBuffStatPairToListIfNotZero(statups, BuffStat.SPEED, (int) ret.speed);
             addBuffStatPairToListIfNotZero(statups, BuffStat.JUMP, (int) ret.jump);
+            addBuffStatPairToListIfNotZero(statups, BuffStat.EXP_BUFF, Integer.valueOf(ret.expbuff));
         }
 
         Data ltd = source.getChildByPath("lt");
@@ -977,8 +978,18 @@ public class StatEffect {
                 Portal pt;
 
                 if (moveTo == MapId.NONE) {
-                    target = applyto.getMap().getReturnMap();
-                    pt = target.getRandomPlayerSpawnpoint();
+                    if (sourceid != ItemId.ANTI_BANISH_SCROLL) {
+                        target = applyto.getMap().getReturnMap();
+                        pt = target.getRandomPlayerSpawnpoint();
+                    } else {
+                        if (!applyto.canRecoverLastBanish()) {
+                            return false;
+                        }
+
+                        Pair<Integer, Integer> lastBanishInfo = applyto.getLastBanishData();
+                        target = applyto.getWarpMap(lastBanishInfo.getLeft());
+                        pt = target.getPortal(lastBanishInfo.getRight());
+                    }
                 } else {
                     target = applyto.getClient().getWorldServer().getChannel(applyto.getClient().getChannel()).getMapFactory().getMap(moveTo);
                     int targetid = target.getId() / 10000000;

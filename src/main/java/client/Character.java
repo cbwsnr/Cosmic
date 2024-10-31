@@ -358,6 +358,10 @@ public class Character extends AbstractCharacterObject {
     private long loginTime;
     private boolean chasing = false;
 
+    private int banishMap = -1;
+    private int banishSp = -1;
+    private long banishTime = 0;
+
     @Getter
     private boolean familyBuff = false;
     @Getter
@@ -1388,6 +1392,26 @@ public class Character extends AbstractCharacterObject {
         if (eim != null) {
             eim.afterChangedMap(this, map);
         }
+    }
+
+    public boolean canRecoverLastBanish() {
+        return System.currentTimeMillis() - this.banishTime < MINUTES.toMillis(5);
+    }
+
+    public Pair<Integer, Integer> getLastBanishData() {
+        return new Pair<>(this.banishMap, this.banishSp);
+    }
+
+    public void clearBanishPlayerData() {
+        this.banishMap = -1;
+        this.banishSp = -1;
+        this.banishTime = 0;
+    }
+
+    public void setBanishPlayerData(int banishMap, int banishSp, long banishTime) {
+        this.banishMap = banishMap;
+        this.banishSp = banishSp;
+        this.banishTime = banishTime;
     }
 
     public void changeMapBanish(BanishInfo banishInfo) {
